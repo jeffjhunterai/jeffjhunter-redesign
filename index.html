@@ -594,22 +594,76 @@ footer {
   .openclaw-grid { grid-template-columns: 1fr; }
   .newsletter-inner { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; }
-  section { padding: 5rem 2rem; }
+  section { padding: 4rem 2rem; }
   .press-strip { padding: 1.5rem 2rem; }
-  .final-cta { padding: 5rem 2rem; }
+  .final-cta { padding: 4rem 2rem; }
   footer { padding: 3rem 2rem 2rem; }
 }
 @media (max-width: 768px) {
   .pain-cards { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
-  .student-grid { grid-template-columns: 1fr; }
+  .student-grid { grid-template-columns: repeat(2,1fr); }
   .footer-top { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .final-cta-meta { flex-direction: column; gap: .5rem; }
+  .press-inner { gap: 1rem; }
+  .hero-left { padding: 5rem 1.5rem 3rem; }
+  section { padding: 3.5rem 1.5rem; }
 }
 @media (max-width: 480px) {
-  .hero h1 { font-size: 3.2rem; }
+  /* Hero */
+  .hero h1 { font-size: 2.8rem; letter-spacing: -.01em; }
+  .hero-tag { font-size: .65rem; }
+  .hero-desc { font-size: .95rem; }
   .hero-btns { flex-direction: column; }
+  .hero-left { padding: 4.5rem 1.25rem 3rem; }
+
+  /* Section headings — reduce for mobile */
+  .section-title { font-size: 1.8rem; }
+  .section-sub { font-size: .95rem; }
+
+  /* Buttons — ensure 44px touch targets */
+  .btn-primary, .btn-outline {
+    padding: 1rem 1.75rem;
+    font-size: .85rem;
+    min-height: 48px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* Pain cards — single column, reduce padding */
+  .pain-card { padding: 2rem 1.5rem; }
+  .pain-num { font-size: 2.2rem; }
+
+  /* Testimonial */
+  .testimonial-text { font-size: 1.1rem; }
+  .testimonial-quote { font-size: 4rem; }
+
+  /* Services — single column */
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: 2rem 1.5rem; }
+  .service-btn { min-height: 48px; display: flex; align-items: center; justify-content: center; }
+
+  /* Newsletter */
+  .nl-brand { font-size: 2rem; }
+  .nl-btn { width: 100%; text-align: center; align-self: stretch; min-height: 48px; }
+
+  /* Final CTA */
+  .final-cta h2 { font-size: 2.5rem; }
+
+  /* Press strip */
+  .press-inner { flex-direction: column; gap: .75rem; align-items: flex-start; }
+  .press-sep { display: none; }
+
+  /* Hamburger — ensure touch target */
+  .hamburger-btn { width: 48px; height: 48px; }
+
+  /* Student grid */
+  .student-grid { grid-template-columns: repeat(3,1fr); }
+
+  /* General spacing */
+  section { padding: 3rem 1.25rem; }
+  .final-cta { padding: 3.5rem 1.25rem; }
+  footer { padding: 2.5rem 1.25rem 1.5rem; }
 }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 </style>
