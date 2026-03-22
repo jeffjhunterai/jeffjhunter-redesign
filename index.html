@@ -649,7 +649,7 @@ footer {
   opacity: 0; transform: translateY(24px);
   transition: opacity .7s ease, transform .7s ease;
 }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
+.fade-up.visible, .no-js .fade-up { opacity: 1; transform: translateY(0); }
 .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
 
 /* ── RESPONSIVE ── */
@@ -970,11 +970,15 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Scroll reveal
+// Scroll reveal — with immediate fallback for above-fold + crawlers
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+// Ensure all elements become visible within 2s regardless (SEO/screenshot safety)
+setTimeout(() => {
+  document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+}, 2000);
 </script>
 </body>
 </html>
