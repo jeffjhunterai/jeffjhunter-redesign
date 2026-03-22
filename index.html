@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jeff J Hunter | Savage Marketer · AI Pioneer · Founder</title>
+<title>Jeff J Hunter | AI Pioneer · Founder · Savage Marketer</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
@@ -45,21 +45,15 @@ body {
   z-index: 100;
   overflow-y: auto;
 }
-.sidebar-logo {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: .08em;
+.sidebar-logo-img {
+  width: 140px;
   margin-bottom: .4rem;
   display: block;
-  line-height: 1.1;
+  filter: brightness(1);
 }
 .sidebar-tagline {
   font-family: 'Oswald', sans-serif;
-  font-size: .72rem;
+  font-size: .7rem;
   font-weight: 500;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -67,54 +61,28 @@ body {
   margin-bottom: 2.5rem;
   display: block;
 }
-.sidebar-nav {
-  list-style: none;
-  flex: 1;
-}
-.sidebar-nav li { margin-bottom: .25rem; }
+.sidebar-nav { list-style: none; flex: 1; }
+.sidebar-nav li { margin-bottom: .2rem; }
 .sidebar-nav a {
   display: flex;
   align-items: center;
-  gap: .75rem;
   color: var(--text-muted);
   text-decoration: none;
   font-family: 'Oswald', sans-serif;
-  font-size: .92rem;
+  font-size: .88rem;
   font-weight: 500;
   letter-spacing: .1em;
   text-transform: uppercase;
-  padding: .65rem .9rem;
+  padding: .6rem .9rem;
   transition: color .2s, background .2s;
   border-left: 2px solid transparent;
 }
-.sidebar-nav a:hover,
-.sidebar-nav a.active {
+.sidebar-nav a:hover, .sidebar-nav a.active {
   color: var(--text);
   background: rgba(255,255,255,.04);
   border-left-color: var(--accent);
 }
-.sidebar-divider {
-  height: 1px;
-  background: var(--card-border);
-  margin: 1.5rem 0;
-}
-.sidebar-socials {
-  display: flex;
-  gap: .5rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-.sidebar-soc {
-  width: 32px; height: 32px;
-  border: 1px solid var(--card-border);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: .65rem; font-weight: 700;
-  letter-spacing: .04em;
-  transition: border-color .2s, color .2s;
-}
-.sidebar-soc:hover { border-color: var(--accent); color: var(--accent); }
+.sidebar-divider { height: 1px; background: var(--card-border); margin: 1.5rem 0; }
 .sidebar-cta {
   display: block;
   background: var(--accent);
@@ -127,38 +95,38 @@ body {
   letter-spacing: .14em;
   text-transform: uppercase;
   text-decoration: none;
-  margin-top: 1rem;
   transition: background .2s;
 }
 .sidebar-cta:hover { background: var(--accent-hover); }
+.sidebar-socials { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.sidebar-soc {
+  width: 32px; height: 32px;
+  border: 1px solid var(--card-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: .62rem; font-weight: 700;
+  letter-spacing: .04em;
+  transition: border-color .2s, color .2s;
+}
+.sidebar-soc:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ── MAIN ── */
-.main-content {
-  margin-left: var(--sidebar-w);
-  flex: 1;
-  min-width: 0;
-}
+.main-content { margin-left: var(--sidebar-w); flex: 1; min-width: 0; }
 
 /* ── HAMBURGER ── */
 .hamburger-btn {
   display: none;
-  position: fixed;
-  top: 1.2rem; left: 1.2rem;
+  position: fixed; top: 1.2rem; left: 1.2rem;
   z-index: 200;
   background: var(--sidebar);
   border: 1px solid var(--card-border);
   width: 44px; height: 44px;
-  flex-direction: column;
-  align-items: center; justify-content: center;
+  flex-direction: column; align-items: center; justify-content: center;
   gap: 5px; cursor: pointer;
 }
 .hamburger-btn span { display: block; width: 20px; height: 2px; background: var(--text); }
-.sidebar-overlay {
-  display: none;
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.7);
-  z-index: 99;
-}
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7); z-index: 99; }
 .sidebar-overlay.open { display: block; }
 .sidebar.mobile-open { transform: translateX(0) !important; }
 
@@ -179,38 +147,39 @@ section { padding: 6rem 4rem; }
   letter-spacing: .03em; line-height: 1.05;
   margin-bottom: 1.25rem;
 }
-.section-sub {
-  font-size: 1rem;
-  color: var(--text-muted);
-  line-height: 1.75; max-width: 580px;
-}
+.section-sub { font-size: 1rem; color: var(--text-muted); line-height: 1.75; max-width: 580px; }
 
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
   background: var(--primary);
-  padding: 8rem 4rem 5rem;
+  padding: 0;
   position: relative;
   overflow: hidden;
 }
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 4rem 5rem;
+  position: relative;
+  z-index: 1;
+}
 .hero-watermark {
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: -3rem; left: -1rem;
   font-family: 'Oswald', sans-serif;
-  font-size: 22vw;
+  font-size: 20vw;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -.02em;
-  color: rgba(255,255,255,.03);
+  color: rgba(255,255,255,.025);
   pointer-events: none;
   white-space: nowrap;
   z-index: 0;
 }
-.hero-content { position: relative; z-index: 1; max-width: 900px; }
 .hero-tag {
   display: inline-block;
   font-family: 'Oswald', sans-serif;
@@ -221,28 +190,27 @@ section { padding: 6rem 4rem; }
 }
 .hero h1 {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(4rem, 9vw, 8rem);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -.01em;
-  line-height: .9;
+  line-height: .92;
   margin-bottom: 2rem;
 }
-.hero h1 .line-accent { color: var(--accent); }
 .hero-desc {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-muted);
   line-height: 1.75;
-  max-width: 560px;
+  max-width: 480px;
   margin-bottom: 2.5rem;
 }
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn-primary {
   background: var(--accent);
   color: var(--text);
-  padding: 1rem 2.4rem;
+  padding: 1rem 2.2rem;
   font-family: 'Oswald', sans-serif;
-  font-weight: 700; font-size: .9rem;
+  font-weight: 700; font-size: .88rem;
   letter-spacing: .12em; text-transform: uppercase;
   text-decoration: none;
   transition: background .2s, transform .2s;
@@ -250,11 +218,10 @@ section { padding: 6rem 4rem; }
 }
 .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
 .btn-outline {
-  background: transparent;
-  color: var(--text);
+  background: transparent; color: var(--text);
   padding: 1rem 2.2rem;
   font-family: 'Oswald', sans-serif;
-  font-weight: 700; font-size: .9rem;
+  font-weight: 700; font-size: .88rem;
   letter-spacing: .12em; text-transform: uppercase;
   text-decoration: none;
   border: 1px solid rgba(255,255,255,.2);
@@ -263,382 +230,341 @@ section { padding: 6rem 4rem; }
 }
 .btn-outline:hover { border-color: var(--accent); transform: translateY(-2px); }
 
-/* ── TRUST BAR ── */
-.trust-bar {
+/* Hero right — Jeff photo */
+.hero-right {
+  position: relative;
+  overflow: hidden;
   background: var(--section-alt);
-  padding: 2.5rem 4rem;
+}
+.hero-photo {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+}
+.hero-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--primary) 0%, transparent 25%), linear-gradient(to top, var(--primary) 0%, transparent 30%);
+}
+.hero-badge {
+  position: absolute;
+  bottom: 2rem; right: 2rem;
+  background: var(--accent);
+  color: var(--text);
+  font-family: 'Oswald', sans-serif;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .15em; text-transform: uppercase;
+  padding: .5rem 1rem;
+}
+
+/* ── PRESS STRIP ── */
+.press-strip {
+  background: var(--section-alt);
+  padding: 2rem 4rem;
   border-top: 1px solid var(--card-border);
   border-bottom: 1px solid var(--card-border);
 }
-.trust-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
+.press-inner {
+  max-width: 1000px; margin: 0 auto;
+  display: flex; align-items: center;
+  gap: 2rem; flex-wrap: wrap;
 }
-.trust-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.trust-stat {
+.press-label {
   font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1;
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
 }
-.trust-label {
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+.press-sep { width: 1px; height: 32px; background: var(--card-border); flex-shrink: 0; }
+.press-item {
+  font-family: 'Oswald', sans-serif;
+  font-size: .88rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
   color: var(--text-muted);
-  max-width: 100px;
-  line-height: 1.4;
+  white-space: nowrap;
 }
-.trust-sep {
-  width: 1px;
-  height: 40px;
-  background: var(--card-border);
-  flex-shrink: 0;
+.press-stat {
+  display: flex; align-items: baseline; gap: .4rem;
 }
-.trust-logo {
+.press-stat-num {
   font-family: 'Oswald', sans-serif;
-  font-size: .88rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-size: 1.6rem; font-weight: 700;
+  color: var(--text); line-height: 1;
+}
+.press-stat-lbl {
+  font-size: .68rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
   color: var(--text-muted);
 }
 
-/* ── PAIN POINTS ── */
+/* ── PAIN ── */
 .pain-section { background: var(--primary); }
 .pain-header { margin-bottom: 3rem; }
-.pain-header-inner {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-}
-.pain-accent-bar {
-  width: 4px;
-  background: var(--accent);
-  flex-shrink: 0;
-  align-self: stretch;
-  min-height: 60px;
-}
+.pain-header-inner { display: flex; align-items: flex-start; gap: 1.5rem; }
+.pain-accent-bar { width: 4px; background: var(--accent); flex-shrink: 0; align-self: stretch; min-height: 60px; }
 .pain-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--card-border);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--card-border);
 }
 .pain-card {
-  background: var(--card-bg);
-  padding: 2.5rem 2rem;
+  background: var(--card-bg); padding: 2.5rem 2rem;
   transition: background .25s;
 }
 .pain-card:hover { background: #2a2a2a; }
 .pain-num {
   font-family: 'Oswald', sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 1.25rem;
-  display: block;
+  font-size: 2.8rem; font-weight: 700;
+  color: var(--accent); line-height: 1;
+  margin-bottom: 1.25rem; display: block;
 }
 .pain-card h3 {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  margin-bottom: .75rem;
-  line-height: 1.2;
+  font-size: 1rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em;
+  margin-bottom: .75rem; line-height: 1.2;
 }
-.pain-card p {
-  font-size: .87rem;
-  color: var(--text-muted);
-  line-height: 1.65;
-}
+.pain-card p { font-size: .85rem; color: var(--text-muted); line-height: 1.65; }
 
 /* ── METHOD ── */
 .method-section { background: var(--section-alt); }
-.method-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: start;
+.method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.method-pillars { margin-top: 3rem; display: flex; flex-direction: column; gap: 0; }
+.method-pillar {
+  display: flex; gap: 1.5rem; align-items: flex-start;
+  padding: 1.5rem 0; border-bottom: 1px solid var(--card-border);
 }
-.method-left { }
-.method-stats { margin-top: 3rem; }
-.method-stat-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--card-border);
+.method-pillar:first-child { border-top: 1px solid var(--card-border); }
+.pillar-icon {
+  font-size: 1.5rem; flex-shrink: 0;
+  width: 44px; height: 44px;
+  background: rgba(230,57,70,.1);
+  display: flex; align-items: center; justify-content: center;
 }
-.method-stat-row:first-child { border-top: 1px solid var(--card-border); }
-.method-stat-num {
+.pillar-label {
   font-family: 'Oswald', sans-serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1;
-  min-width: 100px;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: .3rem; display: block;
 }
-.method-stat-info { }
-.method-stat-label {
+.pillar-title {
   font-family: 'Oswald', sans-serif;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: .3rem;
+  font-size: 1rem; font-weight: 700;
+  text-transform: uppercase; margin-bottom: .4rem;
 }
-.method-stat-desc {
-  font-size: .88rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+.pillar-desc { font-size: .83rem; color: var(--text-muted); line-height: 1.55; }
+.pillar-result {
+  font-size: .78rem; color: var(--accent);
+  font-weight: 600; margin-top: .5rem;
 }
 
-/* ── TESTIMONIAL ── */
+/* ── TESTIMONIALS ── */
 .testimonial-section { background: #252525; }
-.testimonial-inner { max-width: 800px; }
+.testimonial-main { margin-bottom: 4rem; }
 .testimonial-quote {
-  font-family: 'Oswald', sans-serif;
-  font-size: 5rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: .6;
-  margin-bottom: 1.5rem;
+  font-family: 'Georgia', serif;
+  font-size: 5rem; font-weight: 700;
+  color: var(--accent); line-height: .6;
+  margin-bottom: 1.5rem; display: block;
 }
 .testimonial-text {
   font-family: 'Oswald', sans-serif;
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .02em;
-  line-height: 1.3;
-  color: var(--text);
-  margin-bottom: 2.5rem;
+  font-weight: 700; text-transform: uppercase;
+  letter-spacing: .02em; line-height: 1.3;
+  color: var(--text); margin-bottom: 2rem;
+  max-width: 760px;
 }
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-.testimonial-avatar {
-  width: 52px; height: 52px;
-  border-radius: 50%;
-  background: var(--card-border);
-  border: 2px solid var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--accent);
-  flex-shrink: 0;
+.testimonial-author { display: flex; align-items: center; gap: 1.25rem; }
+.testimonial-avatar-photo {
+  width: 52px; height: 52px; border-radius: 50%;
+  border: 2px solid var(--accent); object-fit: cover;
 }
 .testimonial-name {
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+  font-size: 1rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .1em;
 }
-.testimonial-title {
-  font-size: .82rem;
-  color: var(--text-muted);
-  margin-top: .2rem;
+.testimonial-title { font-size: .8rem; color: var(--text-muted); margin-top: .2rem; }
+
+/* Student testimonial grid */
+.student-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--card-border);
+  border: 1px solid var(--card-border);
 }
+.student-card {
+  background: #1e1e1e; overflow: hidden;
+}
+.student-img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.student-body { padding: 1.25rem 1.5rem; }
+.student-name {
+  font-family: 'Oswald', sans-serif;
+  font-size: .85rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em;
+  margin-bottom: .3rem;
+}
+.student-result { font-size: .8rem; color: var(--text-muted); line-height: 1.5; }
 
 /* ── SERVICES ── */
 .services-section { background: var(--primary); }
 .services-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--card-border);
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--card-border);
   margin-top: 3rem;
 }
 .service-card {
-  background: var(--card-bg);
-  padding: 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
-  transition: background .25s;
-  position: relative;
+  background: var(--card-bg); padding: 2.5rem 2rem;
+  display: flex; flex-direction: column;
+  transition: background .25s; position: relative;
 }
 .service-card:hover { background: #2a2a2a; }
 .service-card.featured { background: #1a0000; border-top: 2px solid var(--accent); }
 .service-card.featured:hover { background: #200000; }
 .service-cat {
   font-family: 'Oswald', sans-serif;
-  font-size: .68rem;
-  font-weight: 700;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--text-muted); margin-bottom: 1rem;
 }
 .service-card h3 {
   font-family: 'Oswald', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .04em;
-  margin-bottom: .75rem;
-  line-height: 1.2;
-  flex: 1;
+  font-size: 1.1rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em;
+  margin-bottom: .75rem; line-height: 1.2; flex: 1;
 }
-.service-card p {
-  font-size: .83rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+.service-bullets { list-style: none; margin-bottom: 1.5rem; }
+.service-bullets li {
+  font-size: .8rem; color: var(--text-muted);
+  padding: .3rem 0; padding-left: 1rem;
+  position: relative; line-height: 1.4;
+}
+.service-bullets li::before {
+  content: '—'; position: absolute; left: 0;
+  color: var(--accent); font-weight: 700;
 }
 .service-price {
   font-family: 'Oswald', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1;
-  margin-bottom: .3rem;
+  font-size: 1.8rem; font-weight: 700;
+  color: var(--text); line-height: 1; margin-bottom: .3rem;
 }
-.service-price span {
-  font-size: .8rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  letter-spacing: .05em;
-}
+.service-price span { font-size: .78rem; font-weight: 400; color: var(--text-muted); }
 .featured .service-price { color: var(--accent); }
 .service-btn {
-  display: block;
-  text-align: center;
+  display: block; text-align: center;
   padding: .75rem;
   font-family: 'Oswald', sans-serif;
-  font-weight: 700;
-  font-size: .78rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  text-decoration: none;
-  margin-top: 1.5rem;
+  font-weight: 700; font-size: .78rem;
+  letter-spacing: .14em; text-transform: uppercase;
+  text-decoration: none; margin-top: 1.5rem;
   transition: background .2s, color .2s;
-  border: 1px solid var(--card-border);
-  color: var(--text-muted);
+  border: 1px solid var(--card-border); color: var(--text-muted);
 }
 .service-btn:hover { border-color: var(--accent); color: var(--accent); }
-.featured .service-btn {
-  background: var(--accent);
-  color: var(--text);
-  border-color: var(--accent);
-}
+.featured .service-btn { background: var(--accent); color: var(--text); border-color: var(--accent); }
 .featured .service-btn:hover { background: var(--accent-hover); }
+.service-bonus {
+  font-size: .75rem; color: var(--accent);
+  font-weight: 600; margin-top: .75rem;
+}
+
+/* ── OPENCLAW ── */
+.openclaw-section { background: var(--section-alt); }
+.openclaw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.openclaw-photo { width: 100%; border: 1px solid var(--card-border); display: block; }
+.openclaw-badge {
+  display: inline-block;
+  font-family: 'Oswald', sans-serif;
+  font-size: .68rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  border: 1px solid rgba(230,57,70,.4);
+  color: var(--accent); padding: .3rem .8rem;
+  margin-bottom: 1rem;
+}
 
 /* ── NEWSLETTER ── */
-.newsletter-section { background: var(--section-alt); }
+.newsletter-section { background: var(--primary); }
 .newsletter-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center;
 }
 .nl-brand {
   font-family: 'Oswald', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  line-height: 1;
-  color: var(--accent);
+  font-size: 2.8rem; font-weight: 700;
+  letter-spacing: .06em; line-height: 1;
+  color: var(--accent); text-transform: uppercase;
   margin-bottom: .75rem;
-  text-transform: uppercase;
 }
 .nl-form { display: flex; flex-direction: column; gap: 1rem; }
 .nl-form input {
   background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--card-border);
-  color: var(--text);
-  padding: 1rem 0;
-  font-family: 'Inter', sans-serif;
-  font-size: .92rem;
-  outline: none;
-  transition: border-color .2s;
+  border: none; border-bottom: 1px solid var(--card-border);
+  color: var(--text); padding: 1rem 0;
+  font-family: 'Inter', sans-serif; font-size: .9rem;
+  outline: none; transition: border-color .2s;
 }
 .nl-form input::placeholder { color: var(--text-dim); }
 .nl-form input:focus { border-bottom-color: var(--accent); }
 .nl-btn {
-  background: var(--accent);
-  color: var(--text);
-  border: none;
+  background: var(--accent); color: var(--text); border: none;
   padding: 1rem 2rem;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700; font-size: .88rem;
+  font-family: 'Oswald', sans-serif; font-weight: 700; font-size: .88rem;
   letter-spacing: .14em; text-transform: uppercase;
-  cursor: pointer;
-  transition: background .2s;
-  align-self: flex-start;
-  margin-top: .5rem;
+  cursor: pointer; transition: background .2s; align-self: flex-start; margin-top: .5rem;
 }
 .nl-btn:hover { background: var(--accent-hover); }
 .nl-count { font-size: .78rem; color: var(--text-dim); margin-top: .5rem; }
 
 /* ── FINAL CTA ── */
 .final-cta {
-  background: var(--primary);
-  text-align: center;
-  padding: 8rem 4rem;
+  background: var(--section-alt);
+  text-align: center; padding: 8rem 4rem;
   border-top: 1px solid var(--card-border);
 }
 .final-cta h2 {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(3rem, 7vw, 6rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -.01em;
-  line-height: .95;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 700; text-transform: uppercase;
+  letter-spacing: -.01em; line-height: .95;
   margin-bottom: 1.5rem;
 }
 .final-cta p {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  max-width: 500px;
-  margin: 0 auto 2.5rem;
-  line-height: 1.7;
+  font-size: 1rem; color: var(--text-muted);
+  max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.7;
+}
+.final-cta-meta {
+  margin-top: 1.25rem; display: flex;
+  gap: 2rem; justify-content: center;
+  font-size: .8rem; color: var(--text-dim);
 }
 
 /* ── FOOTER ── */
 footer {
   background: #0a0a0a;
   border-top: 1px solid var(--card-border);
-  padding: 3rem 4rem;
+  padding: 4rem;
 }
-.footer-inner {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
+.footer-inner { max-width: 1000px; margin: 0 auto; }
+.footer-top {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem; margin-bottom: 3rem;
 }
-.footer-logo {
+.footer-logo-img { width: 120px; margin-bottom: 1rem; filter: brightness(.7); display: block; }
+.footer-brand p { font-size: .87rem; color: var(--text-muted); line-height: 1.7; max-width: 240px; }
+.footer-col h4 {
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--text);
+  font-size: .78rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: .7rem; }
+.footer-col a { color: var(--text-muted); text-decoration: none; font-size: .87rem; transition: color .2s; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+  border-top: 1px solid var(--card-border); padding-top: 1.5rem;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 1rem;
 }
 .footer-copy { font-size: .78rem; color: var(--text-dim); }
 .footer-legal { display: flex; gap: 1.5rem; }
@@ -650,7 +576,7 @@ footer {
   opacity: 0; transform: translateY(24px);
   transition: opacity .7s ease, transform .7s ease;
 }
-.fade-up.visible, .no-js .fade-up { opacity: 1; transform: translateY(0); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
 .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; } .d4 { transition-delay: .4s; }
 
 /* ── RESPONSIVE ── */
@@ -658,28 +584,33 @@ footer {
   .sidebar { transform: translateX(-100%); transition: transform .3s; }
   .hamburger-btn { display: flex; }
   .main-content { margin-left: 0; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .hero-left { padding: 6rem 2rem 4rem; }
   .pain-cards { grid-template-columns: repeat(2,1fr); }
-  .services-grid { grid-template-columns: repeat(2,1fr); }
   .method-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2,1fr); }
+  .student-grid { grid-template-columns: repeat(2,1fr); }
+  .openclaw-grid { grid-template-columns: 1fr; }
   .newsletter-inner { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
   section { padding: 5rem 2rem; }
-  .trust-bar { padding: 2rem; }
-  .hero { padding: 6rem 2rem 4rem; }
+  .press-strip { padding: 1.5rem 2rem; }
   .final-cta { padding: 5rem 2rem; }
-  footer { padding: 2.5rem 2rem; }
+  footer { padding: 3rem 2rem 2rem; }
 }
 @media (max-width: 768px) {
   .pain-cards { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
-  .trust-inner { gap: 1.5rem; }
-  .footer-inner { flex-direction: column; text-align: center; }
+  .student-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .final-cta-meta { flex-direction: column; gap: .5rem; }
 }
 @media (max-width: 480px) {
-  .hero h1 { font-size: 3.5rem; }
+  .hero h1 { font-size: 3.2rem; }
   .hero-btns { flex-direction: column; }
-  .nl-btn { width: 100%; text-align: center; }
 }
-
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 </style>
 </head>
@@ -687,18 +618,18 @@ footer {
 
 <!-- SIDEBAR -->
 <aside class="sidebar" id="sidebar">
-  <a href="#home" class="sidebar-logo">Jeff J Hunter</a>
+  <img src="https://jeffjhunter.com/wp-content/uploads/2020/01/JJH-logo-white.png" alt="Jeff J Hunter" class="sidebar-logo-img">
   <span class="sidebar-tagline">Savage Marketer</span>
   <ul class="sidebar-nav">
     <li><a href="#home" class="active">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="https://jeffjhunter.com/media" target="_blank">Media</a></li>
     <li><a href="#services">Work With Me</a></li>
-    <li><a href="#newsletter">Newsletter</a></li>
-    <li><a href="https://jeffjhunter.com/blog">Blog</a></li>
+    <li><a href="https://thetip.ai" target="_blank">Newsletter</a></li>
+    <li><a href="https://vastaffer.com" target="_blank">Virtual Teams</a></li>
   </ul>
   <div class="sidebar-divider"></div>
-  <a href="https://calendly.com/jeffjhunter" class="sidebar-cta" target="_blank" rel="noopener">Book a Call &rarr;</a>
-  <div class="sidebar-divider"></div>
+  <a href="https://jeffjhunter.com/call" class="sidebar-cta" target="_blank" rel="noopener">Book A Strategy Call &rarr;</a>
   <div class="sidebar-socials">
     <a href="https://linkedin.com/in/jeffjhunter" class="sidebar-soc" target="_blank" rel="noopener">LI</a>
     <a href="https://instagram.com/jeffjhunter" class="sidebar-soc" target="_blank" rel="noopener">IG</a>
@@ -712,52 +643,52 @@ footer {
   <span></span><span></span><span></span>
 </button>
 
-<!-- MAIN -->
 <main class="main-content">
 
   <!-- HERO -->
-  <section class="hero" id="home" style="padding-top:8rem;padding-bottom:5rem;">
-    <div class="hero-watermark">SAVAGE</div>
-    <div class="hero-content">
-      <span class="hero-tag fade-up">The Savage Marketer Presents</span>
+  <section class="hero" id="home" style="padding:0;">
+    <div class="hero-left">
+      <div class="hero-watermark">SAVAGE</div>
+      <span class="hero-tag fade-up">Featured in Entrepreneur Magazine &amp; Business Insider</span>
       <h1 class="fade-up">
         ESCAPE<br>
         OPERATIONAL<br>
         CHAOS.
       </h1>
-      <p class="hero-desc fade-up">Build an AI-Powered Business That Runs Without You. Featured in Entrepreneur Magazine &amp; Business Insider. 11+ Years Scaling Businesses With Humans + AI.</p>
+      <p class="hero-desc fade-up">Build an AI-Powered Business That Runs Without You. 1,000+ Students Getting Results. 11+ Years Scaling Businesses With Humans + Automation.</p>
       <div class="hero-btns fade-up">
-        <a href="https://calendly.com/jeffjhunter" class="btn-primary" target="_blank" rel="noopener">Book Strategy Call</a>
-        <a href="#services" class="btn-outline">Explore Systems</a>
+        <a href="https://jeffjhunter.com/call" class="btn-primary" target="_blank" rel="noopener">Book A Strategy Call</a>
+        <a href="https://aimoneygroup.com" class="btn-outline" target="_blank" rel="noopener">Join AI Money Group</a>
       </div>
+    </div>
+    <div class="hero-right">
+      <img
+        src="https://jeffjhunter.com/wp-content/uploads/2025/08/Jeff-J-Hunter-z23YxUM4.png"
+        alt="Jeff J Hunter"
+        class="hero-photo">
+      <div class="hero-photo-overlay"></div>
+      <div class="hero-badge">Savage Marketer</div>
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-inner">
-      <div class="trust-item">
-        <span class="trust-logo">📰 Entrepreneur</span>
+  <!-- PRESS STRIP -->
+  <div class="press-strip">
+    <div class="press-inner">
+      <span class="press-label">Featured In</span>
+      <div class="press-sep"></div>
+      <span class="press-item">📰 Entrepreneur Magazine</span>
+      <div class="press-sep"></div>
+      <span class="press-item">📰 Business Insider</span>
+      <div class="press-sep"></div>
+      <div class="press-stat">
+        <span class="press-stat-num">1,000+</span>
+        <span class="press-stat-lbl">Students Getting Results</span>
       </div>
-      <div class="trust-sep"></div>
-      <div class="trust-item">
-        <span class="trust-logo">📰 Business Insider</span>
+      <div class="press-sep"></div>
+      <div class="press-stat">
+        <span class="press-stat-num">11+</span>
+        <span class="press-stat-lbl">Years in Business</span>
       </div>
-      <div class="trust-sep"></div>
-      <div class="trust-item">
-        <div>
-          <div class="trust-stat">11+</div>
-          <div class="trust-label">Years in Business</div>
-        </div>
-      </div>
-      <div class="trust-sep"></div>
-      <div class="trust-item">
-        <div>
-          <div class="trust-stat">1,000+</div>
-          <div class="trust-label">Students Getting Results</div>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -770,6 +701,7 @@ footer {
           <div>
             <span class="section-eyebrow">The Status Quo Is Killing You</span>
             <h2 class="section-title">You're Working Harder<br>Than Your Business.</h2>
+            <p class="section-sub">Most entrepreneurs are trapped in a cycle that keeps them from real growth.</p>
           </div>
         </div>
       </div>
@@ -787,7 +719,7 @@ footer {
         <div class="pain-card fade-up d3">
           <span class="pain-num">03</span>
           <h3>The AI Confusion</h3>
-          <p>You know AI is the future, but the landscape changes daily. ChatGPT, agents, automations — where do you even start?</p>
+          <p>You KNOW AI is the future, but the landscape changes daily. ChatGPT, agents, automations — where do you even start?</p>
         </div>
         <div class="pain-card fade-up d4">
           <span class="pain-num">04</span>
@@ -802,31 +734,61 @@ footer {
   <section class="method-section">
     <div class="section-inner">
       <div class="method-grid">
-        <div class="method-left fade-up">
+        <div class="fade-up">
           <span class="section-eyebrow">The Solution</span>
           <h2 class="section-title">The AI Persona<br>Method™</h2>
-          <p class="section-sub">A 3-part framework for building a business that runs itself. We don't just add tools — we build systems that clone your operational genius into a digital workforce that never sleeps.</p>
+          <p class="section-sub">A 3-part framework for building a business that runs itself.</p>
+          <div class="method-pillars">
+            <div class="method-pillar">
+              <div class="pillar-icon">🤖</div>
+              <div>
+                <span class="pillar-label">Part 1</span>
+                <div class="pillar-title">Delegate to Virtual Assistants</div>
+                <p class="pillar-desc">Hire pre-trained, AI-equipped VAs starting at $999/month.</p>
+                <p class="pillar-result">💰 Sam saved $30K/year + increased revenue 50%</p>
+              </div>
+            </div>
+            <div class="method-pillar">
+              <div class="pillar-icon">🚀</div>
+              <div>
+                <span class="pillar-label">Part 2</span>
+                <div class="pillar-title">Deploy AI Employees</div>
+                <p class="pillar-desc">AI agents that work 24/7 across all channels.</p>
+                <p class="pillar-result">💰 Stephanie made $192,363 in under a year leveraging AI for her clients</p>
+              </div>
+            </div>
+            <div class="method-pillar">
+              <div class="pillar-icon">⚡</div>
+              <div>
+                <span class="pillar-label">Part 3</span>
+                <div class="pillar-title">Scale Without Headcount</div>
+                <p class="pillar-desc">Build systems that grow without you doing more work.</p>
+                <p class="pillar-result">⏱️ Roberto: 6 months → 10 min/week</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="method-stats fade-up d1">
-          <div class="method-stat-row">
-            <div class="method-stat-num">$30K</div>
-            <div class="method-stat-info">
-              <div class="method-stat-label">Delegate to Virtual Assistants</div>
-              <div class="method-stat-desc">Sam saved $30K/year and increased revenue 50% with pre-trained AI-equipped VAs.</div>
+        <div class="fade-up d1" style="padding-top:5rem;">
+          <span class="section-eyebrow">Real Results From Real Students</span>
+          <h3 class="section-title" style="font-size:1.8rem;margin-bottom:1.5rem;">Join 1,000+ Entrepreneurs Transforming Their Businesses With AI</h3>
+          <div class="student-grid">
+            <div class="student-card">
+              <img src="https://jeffjhunter.com/wp-content/uploads/2026/02/Alex-Zervakos-AI-Persona-Method.webp" alt="Alex Zervakos" class="student-img" loading="lazy">
             </div>
-          </div>
-          <div class="method-stat-row">
-            <div class="method-stat-num">$192K</div>
-            <div class="method-stat-info">
-              <div class="method-stat-label">Deploy AI Employees</div>
-              <div class="method-stat-desc">Stephanie made $192,363 in under a year leveraging AI Employees for her clients.</div>
+            <div class="student-card">
+              <img src="https://jeffjhunter.com/wp-content/uploads/2026/02/Walter-AI-Persona-method.webp" alt="Walter" class="student-img" loading="lazy">
             </div>
-          </div>
-          <div class="method-stat-row">
-            <div class="method-stat-num">10min</div>
-            <div class="method-stat-info">
-              <div class="method-stat-label">Scale Without Headcount</div>
-              <div class="method-stat-desc">Roberto went from 6 months of overwhelm to just 10 minutes per week managing operations.</div>
+            <div class="student-card">
+              <img src="https://jeffjhunter.com/wp-content/uploads/2026/02/Shelly-Najjar-AI-Persona-Method.webp" alt="Shelly Najjar" class="student-img" loading="lazy">
+            </div>
+            <div class="student-card">
+              <img src="https://jeffjhunter.com/wp-content/uploads/2026/02/Jordan-AI-Persona-Method.webp" alt="Jordan" class="student-img" loading="lazy">
+            </div>
+            <div class="student-card">
+              <img src="https://jeffjhunter.com/wp-content/uploads/2026/02/tmpy7183oox.webp" alt="Mark Cruz" class="student-img" loading="lazy">
+            </div>
+            <div class="student-card">
+              <img src="https://jeffjhunter.com/wp-content/uploads/2026/02/Best-Investment-Ever-AI-Persona-method.webp" alt="Student testimonial" class="student-img" loading="lazy">
             </div>
           </div>
         </div>
@@ -837,14 +799,13 @@ footer {
   <!-- TESTIMONIAL -->
   <section class="testimonial-section">
     <div class="section-inner">
-      <div class="testimonial-inner fade-up">
-        <div class="testimonial-quote">&ldquo;</div>
+      <div class="testimonial-main fade-up">
+        <span class="testimonial-quote">&ldquo;</span>
         <p class="testimonial-text">Stop Whatever You're Doing and Get Whatever Program Jeff's Offering You. Jeff is my favorite when it comes to this kind of stuff. Work with Jeff, I promise that you will thank me later.</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">AS</div>
           <div>
             <div class="testimonial-name">Anik Singal</div>
-            <div class="testimonial-title">9-Figures in Online Sales · Founder, Lurn.com · 150K+ Students Trained</div>
+            <div class="testimonial-title">9-Figures in Online Sales · Founder of lurn.com · 150K+ Students Trained</div>
           </div>
         </div>
       </div>
@@ -854,36 +815,78 @@ footer {
   <!-- SERVICES -->
   <section class="services-section" id="services">
     <div class="section-inner">
-      <span class="section-eyebrow fade-up">The Power Menu</span>
-      <h2 class="section-title fade-up">Choose Your Level<br>of Intervention.</h2>
+      <span class="section-eyebrow fade-up">How We Can Work Together</span>
+      <h2 class="section-title fade-up">Choose Your Path<br>to AI-Powered Growth.</h2>
       <div class="services-grid">
         <div class="service-card fade-up d1">
-          <div class="service-cat">Recruitment</div>
+          <div class="service-cat">Virtual Teams</div>
           <h3>Hire a VA</h3>
-          <p>Full-time dedicated support, pre-trained on 30+ AI tools ($4,585 value). No long-term contracts.</p>
-          <div class="service-price">$999<span>/mo</span></div>
-          <a href="https://vastaffer.com" class="service-btn" target="_blank" rel="noopener">Get Started &rarr;</a>
+          <ul class="service-bullets">
+            <li>Full-time dedicated support</li>
+            <li>Pre-trained on 30+ AI tools ($4,585 value)</li>
+            <li>No long-term contracts</li>
+          </ul>
+          <div class="service-price">$999<span>/month</span></div>
+          <a href="https://vastaffer.com" class="service-btn" target="_blank" rel="noopener">Browse Available VAs &rarr;</a>
         </div>
         <div class="service-card featured fade-up d2">
-          <div class="service-cat">Automation</div>
+          <div class="service-cat">AI Employees</div>
           <h3>Deploy an AI Employee</h3>
-          <p>Custom AI personality, multi-channel deployment, and 30-day optimization. Built, secured, and managed for you.</p>
-          <div class="service-price">$500<span>/mo</span></div>
-          <a href="https://vastaffer.com/openclaw-ai-employee" class="service-btn" target="_blank" rel="noopener">Deploy Now &rarr;</a>
+          <ul class="service-bullets">
+            <li>Custom AI personality</li>
+            <li>Multi-channel deployment</li>
+            <li>30-day optimization included</li>
+          </ul>
+          <div class="service-price">$500<span>/month</span></div>
+          <a href="https://vastaffer.com/openclaw-ai-employee" class="service-btn" target="_blank" rel="noopener">Learn About AI Employees &rarr;</a>
         </div>
         <div class="service-card fade-up d3">
           <div class="service-cat">Training</div>
-          <h3>AI Persona Method</h3>
-          <p>50+ hours of training, 30+ Done-For-You AI Personas, 2 monthly AI calls, and lifetime access to group calls.</p>
-          <div class="service-price">$297<span>×5</span></div>
-          <a href="https://jeffjhunter.com/ai-persona-method" class="service-btn" target="_blank" rel="noopener">Enroll &rarr;</a>
+          <h3>AI Persona Method Training</h3>
+          <ul class="service-bullets">
+            <li>50+ hours of training</li>
+            <li>30+ Done-For-You AI Personas</li>
+            <li>2 Monthly AI Calls</li>
+            <li>Lifetime Access to Group Calls + Training</li>
+          </ul>
+          <div class="service-price">$297<span> ×5</span></div>
+          <a href="https://jeffjhunter.com/ai-persona-method" class="service-btn" target="_blank" rel="noopener">Join AI Persona Method &rarr;</a>
+          <p class="service-bonus">🎁 Includes EVERYTHING in AI Money Group!</p>
         </div>
         <div class="service-card fade-up d4">
           <div class="service-cat">Community</div>
           <h3>AI Money Group</h3>
-          <p>8 proven ways to make money with AI, monthly group calls with Jeff, daily AI newsletter + prompts.</p>
-          <div class="service-price">$49<span>/mo</span></div>
-          <a href="https://aimoneygroup.com" class="service-btn" target="_blank" rel="noopener">Join Now &rarr;</a>
+          <ul class="service-bullets">
+            <li>8 proven ways to make money with AI</li>
+            <li>Monthly group calls with Jeff</li>
+            <li>Daily AI newsletter + money-making prompts</li>
+            <li>Access to OpenClaw Training &amp; 100+ Guides</li>
+          </ul>
+          <div class="service-price">$49<span>/month</span></div>
+          <a href="https://aimoneygroup.com" class="service-btn" target="_blank" rel="noopener">Join AI Money Group &rarr;</a>
+          <p class="service-bonus">🎁 Includes FREE AI Money-Making Cheat Sheet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPENCLAW -->
+  <section class="openclaw-section">
+    <div class="section-inner">
+      <div class="openclaw-grid">
+        <div class="fade-up">
+          <img
+            src="https://jeffjhunter.com/wp-content/uploads/2026/02/PXL_20260225_105003901.RAW-01.MP_.COVER_.webp"
+            alt="Jeff J Hunter presenting AI Persona OS at OpenClaw event"
+            class="openclaw-photo">
+        </div>
+        <div class="fade-up d1">
+          <span class="openclaw-badge">Open Source</span>
+          <span class="section-eyebrow">OpenClaw Contributor &amp; Advocate</span>
+          <h2 class="section-title" style="font-size:2.2rem;">Building the Future of<br>AI-Native Business.</h2>
+          <p class="section-sub">Jeff is an early supporter and active contributor to OpenClaw — the open-source gateway that lets AI agents work across WhatsApp, Telegram, Discord, and more.</p>
+          <p class="section-sub" style="margin-top:1rem;">With 15+ AI Employees deployed using OpenClaw and AI Persona OS, Jeff has helped shape security best practices, real-world deployment workflows, and the future of agent-native business operations.</p>
+          <a href="https://jeffjhunter.com/openclaw" class="btn-outline" style="margin-top:2rem;display:inline-block;" target="_blank" rel="noopener">Learn About Jeff &amp; OpenClaw &rarr;</a>
         </div>
       </div>
     </div>
@@ -893,39 +896,68 @@ footer {
   <section class="newsletter-section" id="newsletter">
     <div class="newsletter-inner">
       <div class="fade-up">
-        <span class="section-eyebrow">Daily Intelligence</span>
+        <span class="section-eyebrow">Get Smarter About AI — Every Day</span>
         <div class="nl-brand">TheTip.ai</div>
-        <h2 class="section-title" style="font-size:2rem;margin-bottom:1rem;">One Actionable AI Tip.<br>Every Day.</h2>
-        <p class="section-sub">No fluff. No recycled takes. Just one sharp AI strategy, prompt, or tool you can implement immediately. Used by 20,000+ entrepreneurs to stay ahead of the curve.</p>
+        <h2 class="section-title" style="font-size:2rem;margin-bottom:1rem;">Jeff's Free Daily<br>AI Newsletter.</h2>
+        <p class="section-sub">One actionable AI strategy, prompt, or tool you can implement immediately. No fluff, just results. Used by 1,000+ entrepreneurs to stay ahead.</p>
       </div>
       <div class="fade-up d1">
-        <form class="nl-form" action="https://thetip.ai" method="GET" target="_blank">
-          <input type="text" name="fname" placeholder="First name" required>
-          <input type="email" name="email" placeholder="Your best email" required>
-          <button type="submit" class="nl-btn">Subscribe Free &rarr;</button>
+        <form class="nl-form" action="https://thetip.ai" method="GET" target="_blank" onsubmit="this.submit();">
+          <input type="email" name="email" placeholder="Your best email address" required>
+          <button type="submit" class="nl-btn">Get The Daily Tip &rarr;</button>
         </form>
-        <p class="nl-count">✓ 100% free &nbsp;·&nbsp; ✓ Unsubscribe anytime &nbsp;·&nbsp; ✓ 20,000+ subscribers</p>
+        <p class="nl-count">✓ 100% free &nbsp;&nbsp;✓ Unsubscribe anytime &nbsp;&nbsp;✓ 20,000+ subscribers</p>
       </div>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="final-cta">
-    <h2 class="fade-up">Are You<br>Ready<br>to Escape?</h2>
-    <p class="fade-up d1">The bottleneck is either your system or your ego. One leads to scale, the other leads to stagnation. Book a free 30-minute strategy call — no pitch, just an action plan.</p>
-    <a href="https://calendly.com/jeffjhunter" class="btn-primary fade-up d2" target="_blank" rel="noopener" style="font-size:1rem;padding:1.1rem 3rem;">Book My Strategy Call &rarr;</a>
-    <p class="fade-up d3" style="margin-top:1.25rem;font-size:.8rem;color:var(--text-dim);">✓ 30 minutes &nbsp;·&nbsp; ✓ No obligation &nbsp;·&nbsp; ✓ Leave with an action plan</p>
+    <h2 class="fade-up">Ready to Get<br>Your Time Back?</h2>
+    <p class="fade-up d1">Book a free 30-minute strategy call with my team. No pitch, just actionable advice you can use immediately.</p>
+    <a href="https://jeffjhunter.com/call" class="btn-primary fade-up d2" target="_blank" rel="noopener" style="font-size:1rem;padding:1.1rem 3rem;">Book Your Free Strategy Call</a>
+    <div class="final-cta-meta fade-up d3">
+      <span>✓ 30-minute call</span>
+      <span>✓ No obligation</span>
+      <span>✓ Leave with an action plan</span>
+    </div>
+    <p class="fade-up d4" style="margin-top:2rem;font-size:.85rem;color:var(--text-dim);">— or get free daily AI tips —</p>
+    <a href="https://thetip.ai" class="btn-outline fade-up" style="margin-top:.75rem;display:inline-block;" target="_blank" rel="noopener">Subscribe Free &rarr; Join 20,000+ entrepreneurs reading TheTip.ai daily</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
-      <span class="footer-logo">Jeff J Hunter</span>
-      <p class="footer-copy">&copy; 2026 Jeff J Hunter. All rights reserved.</p>
-      <div class="footer-legal">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="mailto:jeff@jeffjhunter.com">Contact</a>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="https://jeffjhunter.com/wp-content/uploads/2020/01/JJH-logo-white.png" alt="Jeff J Hunter" class="footer-logo-img">
+          <p>Founder of VA Staffer and creator of the AI Persona Method™. Featured in Entrepreneur Magazine and Business Insider for pioneering AI-powered business operations.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="https://vastaffer.com" target="_blank">VA Staffer</a></li>
+            <li><a href="https://jeffjhunter.com/ai-persona-method" target="_blank">AI Persona Method</a></li>
+            <li><a href="https://aimoneygroup.com" target="_blank">AI Money Group</a></li>
+            <li><a href="https://jeffjhunter.com/openclaw" target="_blank">OpenClaw Contributions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://jeffjhunter.com/connect" target="_blank">jeffjhunter.com/connect</a></li>
+            <li><a href="https://jeffjhunter.com/openclaw" target="_blank">AI Persona OS Docs</a></li>
+            <li><a href="https://thetip.ai" target="_blank">TheTip.ai | AI Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Jeff J Hunter. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="https://jeffjhunter.com/privacy">Privacy</a>
+          <a href="https://jeffjhunter.com/terms">Terms</a>
+          <a href="https://jeffjhunter.com/contact">Contact</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -933,7 +965,6 @@ footer {
 </main>
 
 <script>
-// Sidebar toggle
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('sidebarOverlay');
 const hamburger = document.getElementById('hamburgerBtn');
@@ -951,29 +982,18 @@ document.querySelectorAll('.sidebar-nav a').forEach(a => {
     overlay.classList.remove('open');
   });
 });
-
-// Active nav on scroll
 const navLinks = document.querySelectorAll('.sidebar-nav a');
 const sections = document.querySelectorAll('section[id]');
 window.addEventListener('scroll', () => {
   let cur = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 120) cur = s.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
-  });
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) cur = s.id; });
+  navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
 });
-
-// Scroll reveal — with immediate fallback for above-fold + crawlers
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08 });
+}, { threshold: 0.05 });
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
-// Ensure all elements become visible within 2s regardless (SEO/screenshot safety)
-setTimeout(() => {
-  document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-}, 2000);
+setTimeout(() => { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible')); }, 1500);
 </script>
 </body>
 </html>
